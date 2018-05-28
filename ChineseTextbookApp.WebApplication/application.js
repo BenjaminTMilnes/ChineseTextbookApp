@@ -15,6 +15,7 @@ application.controller("MainController", ["$scope", "$timeout", function MainCon
     $scope.index = -1;
     $scope.currentWord = "";
     $scope.currentChoices = [];
+    $scope.correctAnswer = "";
     $scope.showCorrect = false;
 
     $scope.getNextQuestion = function () {
@@ -27,14 +28,15 @@ application.controller("MainController", ["$scope", "$timeout", function MainCon
 
         $scope.currentWord = vocabulary[$scope.index].word;
         $scope.currentChoices = vocabulary[$scope.index].choices;
+        $scope.correctAnswer = vocabulary[$scope.index].choices[0];
 
         $scope.showCorrect = false;
     }
 
     $scope.getNextQuestion();
 
-    $scope.chooseAnswer = function (index) {
-        if (index == 0) {
+    $scope.chooseAnswer = function (answer) {
+        if (answer == $scope.correctAnswer) {
             $scope.showCorrect = true;
             $timeout($scope.getNextQuestion, 1000);
         }
