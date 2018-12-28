@@ -1,0 +1,13 @@
+﻿{
+  "vocabularySets": [
+    {
+      "name": "set1",
+      "vocabulary": [
+        {
+          "word": "我",
+          "choices": [ "I", "you", "we" ]
+        }
+      ]
+    }
+  ]
+}

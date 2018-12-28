@@ -1,5 +1,7 @@
-﻿
+﻿ body{
+    font-family: 'Book Antiqua';
 
+ }
 
 
 .flashcards {
@@ -45,4 +47,27 @@
 
 .choice-number {
     display: none;
+}
+
+.matchpairs-word{
+     flex-basis:125px;
+      height:125px;
+        background-color: #1d67ce;
+         color:#ffffff;
+            margin:5px;
+          text-align:center;
+           border-radius:1px;
+}
+
+.matchpairs-word-chinese{
+    font-family: KaiTi;
+     font-size:70px;
+}
+
+
+.matchpairs{display:flex;
+     flex-wrap:wrap;
+        margin:0px auto;
+         width:540px;
+         height:500px;
 }

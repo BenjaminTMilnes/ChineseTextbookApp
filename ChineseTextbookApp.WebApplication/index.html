@@ -10,12 +10,15 @@
     <script src="application.js"></script>
 </head>
 <body ng-controller="MainController">
-    <div class="flashcards">
+    <div class="flashcards" style="display:none;">
         <div class="word">{{currentWord}}</div>
         <div class="choices">
             <div class="choice" ng-repeat="choice in currentChoices" ng-click="chooseAnswer(choice)">{{choice}}</div>
         </div>
         <div class="correct" ng-show="showCorrect">Correct</div>
     </div>
+  <div class="matchpairs">
+    <div class="matchpairs-word {{word.style}}" ng-repeat="word in currentWords">{{word.word}}</div>
+  </div>
 </body>
 </html>
