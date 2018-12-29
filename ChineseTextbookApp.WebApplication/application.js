@@ -48,9 +48,49 @@ application.controller("MainController", ["$scope", "$timeout", function MainCon
 
     var v1 = vocabulary.slice(0, 8);
 
-    $scope.currentWords = v1.map(w => ( { "word": w.word, "language":"Chinese", "style":"matchpairs-word-chinese"}));
-    $scope.currentWords = $scope.currentWords.concat(v1.map(w => ({ "word": w.choices[0], "language": "English", "style": "matchpairs-word-english" })));
+    $scope.currentWords = v1.map(w => ({ "word": w.word, "language": "Chinese", "style": "matchpairs-word-chinese", "colour": "blue" }));
+    $scope.currentWords = $scope.currentWords.concat(v1.map(w => ({ "word": w.choices[0], "language": "English", "style": "matchpairs-word-english", "colour": "blue" })));
     $scope.currentWords = orderRandomly($scope.currentWords);
+
+    $scope.word1 = "";
+    $scope.word2 = "";
+
+    $scope.chooseWord = function (word) {
+
+        for (let w1 of v1) {
+            if (w1.word == word && w1.colour == "green") {
+                return;
+            }
+        }
+
+        $scope.currentWords.forEach(w => { if (w.word == word) { w.colour = "red"; } });
+
+        if ($scope.word1 == "") {
+            $scope.word1 = word;
+            return;
+        }
+
+        $scope.word2 = word;
+
+        for (let w1 of v1) {
+            if ((w1.word == $scope.word1 && w1.choices[0] == $scope.word2) || (w1.word == $scope.word2 && w1.choices[0] == $scope.word1)) {
+
+                $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "green"; } });
+
+                $scope.word1 = "";
+                $scope.word2 = "";
+
+                return;
+            }
+        }
+
+        $timeout(function () {
+            $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "blue"; } });
+
+            $scope.word1 = "";
+            $scope.word2 = "";
+        }, 500);
+    }
 
     $scope.getNextQuestion = function () {
         if ($scope.index < vocabulary.length) {
