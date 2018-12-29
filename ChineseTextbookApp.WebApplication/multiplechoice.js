@@ -7,11 +7,11 @@ application.controller("MultipleChoiceController", ["$scope", "$timeout", functi
     $scope.currentChoices = [];
     $scope.correctAnswer = "";
     $scope.showCorrect = false;
-    $scope.title = vocabularySet1.multipleChoiceTitle;
+    $scope.title = vocabularySet2.multipleChoiceTitle;
 
     $scope.getNextQuestion = function () {
 
-        var vocabulary = vocabularySet1.vocabulary;
+        var vocabulary = vocabularySet2.vocabulary;
 
         if ($scope.index < vocabulary.length) {
             $scope.index++;

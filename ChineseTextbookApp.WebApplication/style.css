@@ -1,15 +1,25 @@
-﻿ body{
-      font-family:'Book Antiqua';
-       font-size:30px;
-        color:#202020;
- }
+﻿body {
+    font-family: 'Book Antiqua';
+    font-size: 20px;
+    color: #202020;
+    margin: 0px;
+}
 
-  .centrecolumn{
+.centrecolumn {
     width: 1000px;
-    margin: 100px auto;
+    margin: 50px auto 200px auto;
+}
 
-  }
-  
+ h1{
+      font-size:20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+     text-transform:uppercase;
+    letter-spacing:2px;
+     border-bottom:1px solid #c0c0c0;
+    padding: 0px 0px 20px 0px;
+     margin: 0px 0px 50px 0px;
+ }
 
 .blue {
     background-color: #1d67ce;
@@ -19,10 +29,28 @@
     background-color: #e8563c;
 }
 
-.grey{
+.orange{
+     background-color:#ea7b3a;
+}
+
+.grey {
     background-color: #e0e0e0;
 }
 
 .green {
     background-color: #529336;
+}
+
+.namebar {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+     color:#000000;
 }

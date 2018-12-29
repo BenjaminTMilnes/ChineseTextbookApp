@@ -25,6 +25,7 @@ function orderRandomly(array) {
 
 var vocabularySet1 = {
     "multipleChoiceTitle": "Choose the correct English word for the following Chinese word.",
+    "matchThePairsTitle":"Match pairs of Chinese and English words.",
     "from": "Chinese",
     "to": "English",
     "vocabulary": [
@@ -37,6 +38,24 @@ var vocabularySet1 = {
         { "word": "吗", "choices": ["[question particle]", "[follow-up particle]", "[suggestion particle]", "good", "great"] },
         { "word": "很", "choices": ["very", "good", "you", "many", "great"] },
         { "word": "呢", "choices": ["[follow-up particle]", "[question particle]", "[suggestion particle]", "good", "great"] }
+    ]
+};
+
+var vocabularySet2 = {
+    "multipleChoiceTitle": "Choose the correct pinyin for the following Chinese word.",
+    "matchThePairsTitle": "",
+    "from": "Chinese",
+    "to": "Pinyin",
+    "vocabulary": [
+        { "word": "我", "choices": ["wǒ", "wō", "wó", "wò", "wo"] },
+        { "word": "你", "choices": ["nǐ", "nī", "ní", "nì", "ni"] },
+        { "word": "您", "choices": ["", "", "", "", ""] },
+        { "word": "他", "choices": ["", "", "", "", ""] },
+        { "word": "她", "choices": ["", "", "", "", ""] },
+        { "word": "好", "choices": ["", "", "", "", ""] },
+        { "word": "吗", "choices": ["", "", "", "", ""] },
+        { "word": "很", "choices": ["", "", "", "", ""] },
+        { "word": "呢", "choices": ["", "", "", "", ""] }
     ]
 };
 

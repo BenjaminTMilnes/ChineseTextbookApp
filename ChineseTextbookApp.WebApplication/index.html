@@ -3,6 +3,8 @@
 <head>
     <title>Chinese Textbook App</title>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i&amp;subset=greek,greek-ext,latin-ext" rel="stylesheet">
+
     <link type="text/css" rel="stylesheet" href="style.css" />
     <link type="text/css" rel="stylesheet" href="multiplechoice.css" />
     <link type="text/css" rel="stylesheet" href="matchthepairs.css" />
@@ -17,7 +19,9 @@
 </head>
 <body ng-controller="MainController">
     <div class="centrecolumn">
+        <h1>Chinese Textbook App</h1>
         <div ng-view autoscroll="true"></div>
     </div>
+    <div class="namebar">This web app was created by B. T. Milnes. Have a look at the source code here: <a href="https://github.com/BenjaminTMilnes/ChineseTextbookApp" title="Chinese Textbook App Source Code">https://github.com/BenjaminTMilnes/ChineseTextbookApp</a></div>
 </body>
 </html>

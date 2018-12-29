@@ -18,6 +18,7 @@ function getVocabularyPairs(vocabularySet, numberOfPairs) {
 
 application.controller("MatchThePairsController", ["$scope", "$timeout", function MatchThePairsController($scope, $timeout) {
 
+    $scope.title = vocabularySet1.matchThePairsTitle;
     $scope.word1 = "";
     $scope.word2 = "";
 
@@ -25,7 +26,7 @@ application.controller("MatchThePairsController", ["$scope", "$timeout", functio
 
     $scope.startActivity = function () {
 
-        $scope.currentWords = getVocabularyPairs(vocabulary, 8);
+        $scope.currentWords = getVocabularyPairs(vocabularySet1.vocabulary, 8);
 
         $scope.word1 = "";
         $scope.word2 = "";
@@ -47,7 +48,7 @@ application.controller("MatchThePairsController", ["$scope", "$timeout", functio
                     return;
                 }
 
-                w.colour = "red";
+                w.colour = "orange";
             }
         }
 
@@ -58,7 +59,7 @@ application.controller("MatchThePairsController", ["$scope", "$timeout", functio
 
         $scope.word2 = word;
 
-        for (let w1 of vocabulary) {
+        for (let w1 of vocabularySet1.vocabulary) {
             if ((w1.word == $scope.word1 && w1.choices[0] == $scope.word2) || (w1.word == $scope.word2 && w1.choices[0] == $scope.word1)) {
 
                 $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "grey"; } });
