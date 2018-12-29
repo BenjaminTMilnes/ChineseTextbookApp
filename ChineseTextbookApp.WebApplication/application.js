@@ -17,6 +17,22 @@ function orderRandomly(array) {
     return array;
 }
 
+function getVocabularyPairs(vocabularySet, numberOfPairs) {
+    var words = [];
+
+    var v = orderRandomly(vocabularySet);
+    v = v.slice(0, numberOfPairs);
+
+    for (let w of v) {
+        words.push({ "word": w.word, "language": "Chinese", "style": "matchpairs-word-chinese", "colour": "blue" });
+        words.push({ "word": w.choices[0], "language": "English", "style": "matchpairs-word-english", "colour": "blue" });
+    }
+
+    words = orderRandomly(words);
+
+    return words;
+}
+
 var vocabulary = [
 { "word": "我", "choices": ["I", "You", "She"] },
 { "word": "你", "choices": ["You", "I", "He"] },
@@ -36,6 +52,7 @@ var phrases = [
 { "word": "我很好", "choices": ["I'm very well.", "How are you?", "I'm happy."] },
 { "word": "你呢", "choices": ["And you?", "Hello", "How are you?"] }
 ];
+
 application.controller("MainController", ["$scope", "$timeout", function MainController($scope, $timeout) {
 
     $scope.index = -1;
@@ -44,26 +61,38 @@ application.controller("MainController", ["$scope", "$timeout", function MainCon
     $scope.correctAnswer = "";
     $scope.showCorrect = false;
 
-    $scope.currentWords = [];
-
-    var v1 = vocabulary.slice(0, 8);
-
-    $scope.currentWords = v1.map(w => ({ "word": w.word, "language": "Chinese", "style": "matchpairs-word-chinese", "colour": "blue" }));
-    $scope.currentWords = $scope.currentWords.concat(v1.map(w => ({ "word": w.choices[0], "language": "English", "style": "matchpairs-word-english", "colour": "blue" })));
-    $scope.currentWords = orderRandomly($scope.currentWords);
-
     $scope.word1 = "";
     $scope.word2 = "";
 
-    $scope.chooseWord = function (word) {
+    $scope.score = 0;
 
-        for (let w1 of v1) {
-            if (w1.word == word && w1.colour == "green") {
-                return;
-            }
+    $scope.startMatchingPairsActivity = function () {
+
+        $scope.currentWords = getVocabularyPairs(vocabulary, 8);
+
+        $scope.word1 = "";
+        $scope.word2 = "";
+
+        $scope.score = 0;
+
+    }
+
+    $scope.startMatchingPairsActivity();
+
+    $scope.chooseWord = function (word) {
+        if ($scope.word1 != "" && $scope.word2 != "") {
+            return;
         }
 
-        $scope.currentWords.forEach(w => { if (w.word == word) { w.colour = "red"; } });
+        for (let w of $scope.currentWords) {
+            if (w.word == word) {
+                if (w.colour == "green") {
+                    return;
+                }
+
+                w.colour = "red";
+            }
+        }
 
         if ($scope.word1 == "") {
             $scope.word1 = word;
@@ -72,13 +101,19 @@ application.controller("MainController", ["$scope", "$timeout", function MainCon
 
         $scope.word2 = word;
 
-        for (let w1 of v1) {
+        for (let w1 of vocabulary) {
             if ((w1.word == $scope.word1 && w1.choices[0] == $scope.word2) || (w1.word == $scope.word2 && w1.choices[0] == $scope.word1)) {
 
                 $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "green"; } });
 
                 $scope.word1 = "";
                 $scope.word2 = "";
+
+                $scope.score += 1;
+
+                if ($scope.score >= 8) {
+                    $timeout($scope.startMatchingPairsActivity, 1000);
+                }
 
                 return;
             }
