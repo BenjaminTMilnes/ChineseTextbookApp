@@ -1,0 +1,46 @@
+﻿
+.matchthepairs {
+    margin: 0px auto;
+    width: 620px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.matchthepairs-word{
+    flex-basis: 125px;
+    height: 125px;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 1px;
+    color: #ffffff;
+    text-align: center;
+    transition: background-color 0.4s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.matchthepairs-word-chinese {
+    font-family: KaiTi;
+    font-size: 70px;
+}
+
+.matchthepairs-word-english {
+    font-family: 'Book Antiqua';
+    font-size: 30px;
+}
+
+.blue {
+    background-color: #1d67ce;
+}
+
+.red {
+    background-color:#e8563c;
+}
+
+.green {
+background-color:#529336;
+    background-color:#e0e0e0;
+}

@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="matchthepairs.css" />
+    <Content Include="matchthepairs.html" />
+    <Content Include="matchthepairs.js" />
     <Content Include="packages.config" />
     <Content Include="greetings1.lesson.json" />
     <None Include="Web.Debug.config">
