@@ -1,6 +1,6 @@
 ﻿ body{
       font-family:'Book Antiqua';
-       font-size:20px;
+       font-size:30px;
         color:#202020;
  }
 
@@ -9,3 +9,20 @@
     margin: 100px auto;
 
   }
+  
+
+.blue {
+    background-color: #1d67ce;
+}
+
+.red {
+    background-color: #e8563c;
+}
+
+.grey{
+    background-color: #e0e0e0;
+}
+
+.green {
+    background-color: #529336;
+}

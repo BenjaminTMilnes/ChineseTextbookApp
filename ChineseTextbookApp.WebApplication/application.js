@@ -30,13 +30,13 @@ var vocabularySet1 = {
     "vocabulary": [
         { "word": "我", "choices": ["I", "You", "He", "She", "We"] },
         { "word": "你", "choices": ["You", "I", "He", "She", "We"] },
-        { "word": "您", "choices": ["You (formal)", "You (informal)", "I"] },
-        { "word": "他", "choices": ["He", "She", "You"] },
-        { "word": "她", "choices": ["She", "He", "They"] },
-        { "word": "好", "choices": ["good", "very", "are"] },
-        { "word": "吗", "choices": ["[question particle]", "[follow-up particle]", "good"] },
-        { "word": "很", "choices": ["very", "good", "you"] },
-        { "word": "呢", "choices": ["[follow-up particle]", "[question particle]", "good"] }
+        { "word": "您", "choices": ["You (formal)", "You (informal)", "I", "We", "They"] },
+        { "word": "他", "choices": ["He", "She", "You", "We", "They"] },
+        { "word": "她", "choices": ["She", "He", "You", "We", "They"] },
+        { "word": "好", "choices": ["good", "very", "are", "many", "have"] },
+        { "word": "吗", "choices": ["[question particle]", "[follow-up particle]", "[suggestion particle]", "good", "great"] },
+        { "word": "很", "choices": ["very", "good", "you", "many", "great"] },
+        { "word": "呢", "choices": ["[follow-up particle]", "[question particle]", "[suggestion particle]", "good", "great"] }
     ]
 };
 

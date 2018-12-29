@@ -43,7 +43,7 @@ application.controller("MatchThePairsController", ["$scope", "$timeout", functio
 
         for (let w of $scope.currentWords) {
             if (w.word == word) {
-                if (w.colour == "green") {
+                if (w.colour == "grey") {
                     return;
                 }
 
@@ -61,7 +61,7 @@ application.controller("MatchThePairsController", ["$scope", "$timeout", functio
         for (let w1 of vocabulary) {
             if ((w1.word == $scope.word1 && w1.choices[0] == $scope.word2) || (w1.word == $scope.word2 && w1.choices[0] == $scope.word1)) {
 
-                $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "green"; } });
+                $scope.currentWords.forEach(w => { if (w.word == $scope.word1 || w.word == $scope.word2) { w.colour = "grey"; } });
 
                 $scope.word1 = "";
                 $scope.word2 = "";

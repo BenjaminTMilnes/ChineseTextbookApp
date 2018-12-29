@@ -1,6 +1,9 @@
 ﻿.multiplechoice {
 }
 
+.questionnumber {
+}
+
 .multiplechoice-word {
     font-size: 300px;
     font-family: KaiTi;
@@ -17,21 +20,13 @@
 
 .choice {
     padding: 30px;
-     background-color:#f0f0f0;
+     color:#ffffff;
+    transition: background-color 0.4s;
     border-radius: 1px;
     margin: 5px;
-    font-size: 50px;
+    font-size: 30px;
     cursor: pointer;
     min-width: 100px;
     text-align: center;
     vertical-align: middle;
-}
-
-    .choice:hover {
-        background-color: #1d67ce;
-        color: #FFFFFF;
-    }
-
-.choice-number {
-    display: none;
 }
