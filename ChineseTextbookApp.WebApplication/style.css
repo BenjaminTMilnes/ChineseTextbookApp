@@ -1,48 +1,11 @@
-﻿body {
-}
+﻿ body{
+      font-family:'Book Antiqua';
+       font-size:20px;
+        color:#202020;
+ }
 
-
-.flashcards {
+  .centrecolumn{
     width: 1000px;
     margin: 100px auto;
-}
 
-
-
-.word {
-    font-size: 300px;
-    font-family: KaiTi;
-    text-align: center;
-    padding: 50px;
-}
-
-
-.choices {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.choice {
-    font-family: 'Book Antiqua';
-    padding: 30px;
-    border: 1px solid #C0C0C0;
-    border-radius: 2px;
-    margin: 15px;
-    font-size: 50px;
-    cursor: pointer;
-    min-width: 100px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-    .choice:hover {
-        background-color: #1d67ce;
-        border-color: #225baa;
-        color: #FFFFFF;
-    }
-
-.choice-number {
-    display: none;
-}
+  }

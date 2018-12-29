@@ -1,0 +1,8 @@
+﻿<div class="multiplechoice">
+    <p>{{title}}</p>
+    <div class="multiplechoice-word {{currentWordStyle}}">{{currentWord}}</div>
+    <div class="multiplechoice-choices">
+        <div class="choice" ng-repeat="choice in currentChoices" ng-click="chooseAnswer(choice)">{{choice}}</div>
+    </div>
+    <div class="correct" ng-show="showCorrect">Correct</div>
+</div>

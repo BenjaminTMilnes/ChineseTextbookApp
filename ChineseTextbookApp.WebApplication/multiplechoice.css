@@ -1,0 +1,37 @@
+﻿.multiplechoice {
+}
+
+.multiplechoice-word {
+    font-size: 300px;
+    font-family: KaiTi;
+    text-align: center;
+    padding: 50px;
+}
+
+.multiplechoice-choices{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice {
+    padding: 30px;
+     background-color:#f0f0f0;
+    border-radius: 1px;
+    margin: 5px;
+    font-size: 50px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .choice:hover {
+        background-color: #1d67ce;
+        color: #FFFFFF;
+    }
+
+.choice-number {
+    display: none;
+}

@@ -7,7 +7,7 @@
     flex-wrap: wrap;
 }
 
-.matchthepairs-word{
+.matchthepairs-word {
     flex-basis: 125px;
     height: 125px;
     margin: 5px;
@@ -37,10 +37,10 @@
 }
 
 .red {
-    background-color:#e8563c;
+    background-color: #e8563c;
 }
 
 .green {
-background-color:#529336;
-    background-color:#e0e0e0;
+    background-color: #529336;
+    background-color: #e0e0e0;
 }
